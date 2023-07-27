@@ -1,0 +1,48 @@
+.filter {
+    margin: 0 70px 0;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    padding-bottom: 70px;
+    border-bottom: 1px solid #424242;
+}
+
+.filter__switch {
+    width: 36px;
+    height: 20px;
+    background: none;
+    border: none;
+    padding: 0;
+    background-image: url(../../../images/smalltumboff.svg);
+    cursor: pointer;
+}
+
+.filter__switch_on {
+    background-image: url(../../../images/smalltumb.svg);
+}
+
+.filter__text {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+@media all and (max-width: 780px) {
+    .filter {
+        margin: 0 30px 0;
+        padding-bottom: 50px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .filter {
+        margin: 0 14px 0;
+    }
+    .filter__text {
+        font-size: 11px;
+    }
+}
