@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './Header.css';
 import logo from '../../images/logo__header.svg';
+import HeaderNav from "./HeaderNav/HeaderNav";
 
-function Header({ children }) {
+function Header() {
     return (
         <header className="header">
             <Link to="/"><img className="header__logo" alt="Логотип" src={logo} /></Link>
-            {children}
             {/*Здесь будет стэйт LoggedIn*/}
+            <HeaderNav />
             <div className="header__profile">
                 <p className="header__text">Аккаунт</p>
                 <Link to="/profile"><div className="header__icon"></div></Link>

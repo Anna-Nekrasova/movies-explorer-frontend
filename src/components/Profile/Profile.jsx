@@ -1,14 +1,11 @@
 import Header from '../Header/Header';
 import Navigation from '../Navigation/Navigation';
 import './Profile.css';
-import HeaderNav from '../Header/HeaderNav/HeaderNav'
 
 function Profile() {
     return (
         <>
-            <Header>
-                <HeaderNav />
-            </Header>
+            <Header />
             <main className="profile">
                 <h1 className="profile__greeting">Привет, Виталий!</h1>
                 <div className="profile__line">

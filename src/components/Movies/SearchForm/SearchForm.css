@@ -13,6 +13,10 @@
     padding-right: 6px;
 }
 
+.search__form:focus {
+    outline: 10px solid #fff;
+}
+
 .search__content {
     width: 100%;
 }
@@ -49,10 +53,10 @@
     opacity: 0.8;
 }
 
-.search__field::-webkit-search-decoration,
+/*.search__field::-webkit-search-decoration,
 .search__field::-webkit-search-cancel-button { 
     display: none; 
-}
+}*/
 
 @media all and (max-width: 780px) {
     .search {
