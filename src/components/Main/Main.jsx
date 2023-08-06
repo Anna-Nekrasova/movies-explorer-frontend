@@ -7,10 +7,10 @@ import AboutMe from './AboutMe/AboutMe';
 import Portfolio from './Portfolio/Portfolio';
 import './Main.css';
 
-function Main() {
+function Main({ isLoggedIn, openMenu }) {
     return (
         <>
-            <Header></Header>
+            <Header loggedIn={isLoggedIn} openMenu={openMenu} />
             <main className="content">
                 <Promo />
                 <AboutProject />
