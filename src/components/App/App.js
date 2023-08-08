@@ -183,12 +183,12 @@ function App() {
   //Кнопка еще
   function handleButtonMore() {
     if (location === "/movies") {
-    const foundMovies = JSON.parse(localStorage.getItem('foundMovies'))
-    const resizedMovies = JSON.parse(localStorage.getItem('resizedMovies'));
-    const newMoviesList = foundMovies.slice(0, resizedMovies.length + moreCards);
-    localStorage.setItem('resizedMovies', JSON.stringify(newMoviesList));
-    setMoviesInfo(newMoviesList);
-    foundMovies.length === newMoviesList.length ? setIsButtonMore(false) : setIsButtonMore(true);
+      const foundMovies = JSON.parse(localStorage.getItem('foundMovies'))
+      const resizedMovies = JSON.parse(localStorage.getItem('resizedMovies'));
+      const newMoviesList = foundMovies.slice(0, resizedMovies.length + moreCards);
+      localStorage.setItem('resizedMovies', JSON.stringify(newMoviesList));
+      setMoviesInfo(newMoviesList);
+      foundMovies.length === newMoviesList.length ? setIsButtonMore(false) : setIsButtonMore(true);
     } else {
       const newMoviesList = foundSavedMoviesInfo.slice(0, resizedSavedMoviesInfo.length + moreCards);
       setResizedSavedMoviesInfo(newMoviesList);
@@ -214,6 +214,7 @@ function App() {
 
   //Поиск в сохраненных фильмах
   function searchSavedMovies(key, isCheckboxTrueSavedMovies) {
+    debugger;
     setSavedMovieKey(key);
     setIsFound(true);
     const filterMoviesList = allSavedMoviesInfo.filter((movie) => {
@@ -227,6 +228,7 @@ function App() {
         setFoundSavedMoviesInfo(handleCheckboxFilter(filterMoviesList));
         handleResizeSavedMovies(handleCheckboxFilter(filterMoviesList));
       } else {
+        debugger;
         setSavedMoviesInfo(filterMoviesList);
         setFoundSavedMoviesInfo(filterMoviesList);
         handleResizeSavedMovies(filterMoviesList);
@@ -262,7 +264,7 @@ function App() {
   function registerUser({ name, email, password }) {
     authApi.register(name, email, password)
       .then((res) => {
-        navigate('/signin');
+        loginUser({ email, password });
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
@@ -315,7 +317,7 @@ function App() {
     setResizedSavedMoviesInfo([]);
     setFoundSavedMoviesInfo([]);
     setIsLoggedIn(false);
-    navigate("/signin");
+    navigate('/');
   }
 
   //Сохранение/удаление фильмов
@@ -343,10 +345,15 @@ function App() {
 
   function deleteMovie(movie) {
     const isLiked = allSavedMoviesInfo.find((item) => (item.nameRU) === (movie.nameRU) && item.owner);
+    debugger;
     mainApi.deleteMovie(isLiked._id)
       .then(() => {
-        setAllSavedMoviesInfo((state) => state.filter((item) => item.id || item._id || item.movieId !== movie.id || movie._id || movie.movieId));
-        getSavedMoviesFromApi();
+        const newList = allSavedMoviesInfo.filter((item) => item._id !== isLiked._id);
+        console.log(newList);
+        setAllSavedMoviesInfo(newList);
+        console.log(allSavedMoviesInfo);
+        debugger;
+        //getSavedMoviesFromApi();
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);

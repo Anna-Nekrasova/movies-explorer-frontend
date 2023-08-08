@@ -42,6 +42,7 @@ function Profile({ signOut, isLoggedIn, openMenu, onUpdateUser }) {
             name,
             email,
         });
+        alert("Данные изменены.");
     }
 
     function checkValid() {

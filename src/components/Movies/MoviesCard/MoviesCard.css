@@ -137,5 +137,6 @@
     }
     .card__deletion {
         margin: 3px 10px 0 0;
+        background-image: url(../../../images/deleteMovie.svg);
     }
 }

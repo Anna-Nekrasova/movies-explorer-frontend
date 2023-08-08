@@ -5,6 +5,8 @@ import logo from '../../images/logo__header.svg';
 import useForm from '../../hooks/useForm.js';
 
 function Register({ registerUser }) {
+    const [isValid, setIsValid] = React.useState(false);
+
     const { form, errors, handleChange } = useForm({
         name: "",
         email: "",
@@ -15,6 +17,36 @@ function Register({ registerUser }) {
         evt.preventDefault();
         registerUser(form);
     };
+
+    function checkValidEmail() {
+        const email = form.email;
+        const valid = email.match(/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu);
+        if (valid === null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function checkValid() {
+        const isValidEmail = checkValidEmail();
+        if (!errors.name
+            && !errors.email
+            && !errors.password
+            && form.name !== ""
+            && form.email !== ""
+            && form.password !== ""
+            && isValidEmail === true
+        ) {
+            setIsValid(true);
+        } else {
+            setIsValid(false);
+        }
+    }
+
+    React.useEffect(() => {
+        checkValid();
+    }, [form])
 
     return (
         <main className="register">
@@ -32,7 +64,7 @@ function Register({ registerUser }) {
                     <input type="password" className="register__text" id="password" name="password" placeholder="Введите пароль" value={form.password} onChange={handleChange} required />
                     <span className="register__error">{errors.password}</span>
                 </div>
-                <button className="register__save" type="submit">Зарегестрироваться</button>
+                <button className="register__save" type="submit" disabled={!isValid}>Зарегестрироваться</button>
             </form>
             <p className="register__element">Уже зарегестрированы? <Link to="/signin" className="register__link">Войти</Link></p>
         </main>
