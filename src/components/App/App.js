@@ -85,6 +85,15 @@ function App() {
     handleResizeMovies();
   }, [windowWidth, location]);
 
+  React.useEffect(() => {
+    searchSavedMovies(savedMovieKey, isCheckboxTrueSavedMovies);
+  }, [allSavedMoviesInfo]);
+
+  React.useEffect(() => {
+    setSavedMovieKey("");
+    setIsCheckboxTrueSavedMovies(false);
+  }, [location]);
+
   function checkWindowWidth() {
     setWindowWidth(window.innerWidth);
   }
@@ -214,7 +223,6 @@ function App() {
 
   //Поиск в сохраненных фильмах
   function searchSavedMovies(key, isCheckboxTrueSavedMovies) {
-    debugger;
     setSavedMovieKey(key);
     setIsFound(true);
     const filterMoviesList = allSavedMoviesInfo.filter((movie) => {
@@ -228,7 +236,6 @@ function App() {
         setFoundSavedMoviesInfo(handleCheckboxFilter(filterMoviesList));
         handleResizeSavedMovies(handleCheckboxFilter(filterMoviesList));
       } else {
-        debugger;
         setSavedMoviesInfo(filterMoviesList);
         setFoundSavedMoviesInfo(filterMoviesList);
         handleResizeSavedMovies(filterMoviesList);
@@ -345,15 +352,12 @@ function App() {
 
   function deleteMovie(movie) {
     const isLiked = allSavedMoviesInfo.find((item) => (item.nameRU) === (movie.nameRU) && item.owner);
-    debugger;
     mainApi.deleteMovie(isLiked._id)
       .then(() => {
         const newList = allSavedMoviesInfo.filter((item) => item._id !== isLiked._id);
-        console.log(newList);
-        setAllSavedMoviesInfo(newList);
-        console.log(allSavedMoviesInfo);
-        debugger;
-        //getSavedMoviesFromApi();
+        localStorage.setItem('allSavedMovies', JSON.stringify(newList));
+        setAllSavedMoviesInfo(JSON.parse(localStorage.getItem('allSavedMovies')));
+        setSavedMoviesInfo(JSON.parse(localStorage.getItem('allSavedMovies')));
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);

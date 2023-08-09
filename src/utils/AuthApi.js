@@ -1,5 +1,5 @@
-//export const baseUrl = "https://api.movies.explorer.nomoredomains.work/";
-export const baseUrl =  "http://localhost:3001/";
+export const baseUrl = "https://api.movies.explorer.nomoredomains.work/";
+//export const baseUrl =  "http://localhost:3001/";
 
 
 const makeRequest = (url, method, body, token) => {

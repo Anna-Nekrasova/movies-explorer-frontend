@@ -77,6 +77,6 @@ export default class MainApi {
     }
 }
 
-//const baseUrl = 'https://api.movies.explorer.nomoredomains.work';
-const baseUrl =  "http://localhost:3001";
+const baseUrl = 'https://api.movies.explorer.nomoredomains.work';
+//const baseUrl =  "http://localhost:3001";
 export const mainApi = new MainApi(baseUrl);
