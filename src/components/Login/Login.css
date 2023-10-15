@@ -90,6 +90,24 @@
     opacity: 0.8;
 }
 
+
+.login__save:disabled {
+    color: #fff;
+    background-color: #4285F4;
+    border: none;
+    border-radius: 3px;
+    padding: 0;
+    width: 100%;
+    min-height: 45px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: normal;
+    opacity: 0.5;
+    cursor: default;
+}
+
 .login__element {
     text-align: center;
     margin: 16px auto 70px;

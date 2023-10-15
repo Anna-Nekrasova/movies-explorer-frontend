@@ -13,6 +13,12 @@
     transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
 
+.navigation_on {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
 .navigation__close {
     background-color: #202020;
     border: none;

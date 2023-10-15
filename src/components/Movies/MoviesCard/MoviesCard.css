@@ -16,6 +16,11 @@
     min-height: 203px;
 }
 
+.card__trailer {
+    margin: 0;
+    text-decoration: none;
+}
+
 .card__description {
     display: flex;
     justify-content: space-between;
@@ -38,7 +43,8 @@
     font-size: 13px;
     line-height: normal;
     margin: 14px 0 0 16px;
-    width: fit-content;
+    width: 290px;
+    text-align: left;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -94,6 +100,7 @@
     }
     .card__name {
         margin: 12px 0 0 15px;
+        width: 260px;
     }
     .card__time {
         margin: 15px 0 0 15px;
@@ -119,6 +126,7 @@
     .card__name {
         margin: 10px 0 0 14px;
         font-size: 12px;
+        width: 240px;
     }
     .card__time {
         font-size: 10px;
@@ -129,5 +137,6 @@
     }
     .card__deletion {
         margin: 3px 10px 0 0;
+        background-image: url(../../../images/deleteMovie.svg);
     }
 }
