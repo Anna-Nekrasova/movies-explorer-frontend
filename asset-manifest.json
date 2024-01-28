@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/movies-explorer-frontend/static/css/main.13279467.css",
+    "main.js": "/movies-explorer-frontend/static/js/main.4bf2585b.js",
+    "static/media/Inter-Black.woff": "/movies-explorer-frontend/static/media/Inter-Black.fd37f7e052bea1018058.woff",
+    "static/media/Inter-Regular.woff": "/movies-explorer-frontend/static/media/Inter-Regular.34ed58565339f4f3be40.woff",
+    "static/media/Inter-Black.woff2": "/movies-explorer-frontend/static/media/Inter-Black.141c7af6ed109b318513.woff2",
+    "static/media/Inter-Regular.woff2": "/movies-explorer-frontend/static/media/Inter-Regular.4c96ed73beaf6d1e6cc7.woff2",
+    "static/media/Inter-Medium.woff": "/movies-explorer-frontend/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
+    "static/media/Inter-Medium.woff2": "/movies-explorer-frontend/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/me.jpg": "/movies-explorer-frontend/static/media/me.8ebb9cf728b348c6f5b4.jpg",
+    "static/media/logo__header.svg": "/movies-explorer-frontend/static/media/logo__header.78ee6e76ae0211ac88d9baa2ce536054.svg",
+    "index.html": "/movies-explorer-frontend/index.html",
+    "static/media/icon__header.svg": "/movies-explorer-frontend/static/media/icon__header.1c18a46d6de954af7ee5.svg",
+    "static/media/save4d.svg": "/movies-explorer-frontend/static/media/save4d.c275a3dedfb32172ac3b.svg",
+    "static/media/menu.svg": "/movies-explorer-frontend/static/media/menu.f4eda59cff73fa84f1ea.svg",
+    "static/media/deleteMovie.svg": "/movies-explorer-frontend/static/media/deleteMovie.aa3ea535fa29d1fe0891.svg",
+    "static/media/save4.svg": "/movies-explorer-frontend/static/media/save4.952430abcbd5f806840e.svg",
+    "static/media/closeNav.svg": "/movies-explorer-frontend/static/media/closeNav.4828fddbd650ab863f28.svg",
+    "static/media/find.svg": "/movies-explorer-frontend/static/media/find.118669248cdb86121199.svg",
+    "static/media/smalltumboff.svg": "/movies-explorer-frontend/static/media/smalltumboff.01812340b1af8e2ad27b.svg",
+    "static/media/smalltumb.svg": "/movies-explorer-frontend/static/media/smalltumb.b283bd987589383e1be2.svg",
+    "main.13279467.css.map": "/movies-explorer-frontend/static/css/main.13279467.css.map",
+    "main.4bf2585b.js.map": "/movies-explorer-frontend/static/js/main.4bf2585b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.13279467.css",
+    "static/js/main.4bf2585b.js"
+  ]
+}
