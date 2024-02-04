@@ -324,7 +324,7 @@ function App() {
     setResizedSavedMoviesInfo([]);
     setFoundSavedMoviesInfo([]);
     setIsLoggedIn(false);
-    navigate('/');
+    navigate('/movies-explorer-frontend');
   }
 
   //Сохранение/удаление фильмов
@@ -387,7 +387,7 @@ function App() {
 
       <div className="App">
         <Routes>
-          <Route path="/" element={<Main
+          <Route path="/movies-explorer-frontend" element={<Main
             isLoggedIn={isLoggedIn}
             openMenu={handleMenuOpen} />}
           />
